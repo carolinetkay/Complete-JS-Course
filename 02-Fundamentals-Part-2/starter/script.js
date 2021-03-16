@@ -23,14 +23,22 @@ const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 const tips = [];
 const totals = [];
 
+let tip = 0;
 const calcTip = function (bill) {
-    let tip = 0;
     bill >= 50 && bill <=300 ? (tip = 15/100) : (tip = 20/100);
-    let tipAmount = bill * tip;
-    tips.push(tipAmount);
-    let totalAmount = tipAmount;
-    totals.push(totalAmount);
-    return `Tip: ${tipAmount}. Total Amount: ${totalAmount}`;
+    return tip;
 }
 
-console.log(calcTip(100));
+for (let i = 0; i < bills.length; i++) {
+    tip = calcTip(bills[i]);
+    let tipAmount = bills[i] * tip;
+    tips.push(tipAmount);
+    // console.log(`Tip : ${tipAmount}`);
+    
+    let totalAmount = bills[i] + tipAmount;
+    totals.push(totalAmount);
+    // console.log(`Total : ${totalAmount}`);
+};
+
+console.log(`Tips: ${tips}`);
+console.log(`Total Amounts: ${totals}`);
