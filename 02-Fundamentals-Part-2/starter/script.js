@@ -41,4 +41,4 @@ for (let i = 0; i < bills.length; i++) {
 };
 
 console.log(`Tips: ${tips}`);
-console.log(`Total Amounts: ${totals}`);
+console.log(`Total Amounts: ${totals}`); 
