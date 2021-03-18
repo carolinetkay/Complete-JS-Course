@@ -7,22 +7,26 @@ const btnsOpenModal = document.querySelectorAll('.show-modal');
 
 // event listener for showing the modal with overlay
 const eventHandler = function () {
-    console.log('button clicked');
-    modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-
-}
-
-btnsOpenModal.forEach((btn) => {
-    btn.addEventListener('click', eventHandler)
-})
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+btnsOpenModal.forEach(btn => {
+  btn.addEventListener('click', eventHandler);
+});
 
 // event listener for closing the modal once shown to users
 const closeHandler = function () {
-    modal.classList.add('hidden');
-    overlay.classList.add('hidden');
-}
-// both the x button and the overlay will listen and do the same thing
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+const escapeCloseModal = function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeHandler();
+  };
+};
+
+// close the modal if: 1. click x 2. click on overlay 3. click escape button
 btnCloseModal.addEventListener('click', closeHandler);
 overlay.addEventListener('click', closeHandler);
-
+document.addEventListener('keydown', escapeCloseModal);
