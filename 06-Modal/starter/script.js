@@ -22,7 +22,7 @@ const closeHandler = function () {
     modal.classList.add('hidden');
     overlay.classList.add('hidden');
 }
-
-
+// both the x button and the overlay will listen and do the same thing
 btnCloseModal.addEventListener('click', closeHandler);
+overlay.addEventListener('click', closeHandler);
 
