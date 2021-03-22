@@ -1,4 +1,4 @@
-'use strict';
+   'use strict';
 
 // Data needed for a later exercise
 const flights =
@@ -27,3 +27,38 @@ const restaurant = {
     },
   },
 };
+
+// const arr = [7, 8, 9]
+// const arr2 = [1, 2, 3]
+
+// const superArr = [...arr, ...arr2]
+// console.log([superArr]);
+// console.log(...superArr); 
+
+
+// SPREADS ... are on the Right
+// SPREADS unpack things in a list; used where you would write Values separated by a comma
+// const ingredients = [
+//   prompt("let's make lasagne~ Ingredient 1 please?"),d
+//   prompt("let's make lasagne~ Ingredient 2 please?"),
+//   prompt("let's make lasagne~ Ingredient 3 please?")
+// ]
+
+// console.log(ingredients);
+
+const orderFood = function (ing1, ing2, ing3) {
+  // console.log(...ingredients);
+  console.log(`Here is your lasagne with ${ing1}, ${ing2} and ${ing3}!`);
+}
+// orderFood(...ingredients);
+
+// RESTs ... are on the Left
+// RESTs aggregate things from a list used where you would write Variable names separated by a comma
+const [f1, f2, ...others] = ['pizza', 'pasta', 'risotto', 'mushrooms', 'focaccia'];
+
+console.log(f1, f2, others);
+
+
+
+
+
