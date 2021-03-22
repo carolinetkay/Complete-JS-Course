@@ -41,39 +41,37 @@ const game = {
   },
 };
 
-// #1 
-const players1 = [...game.players[0]]
-console.log(players1);
+// #1 CONSTRUCTING
+const [players1, players2] = game.players;
+// console.log(players1, players2);
 
-const players2 = [...game.players[1]]
-console.log(players2);
+// #2 CONSTRUCTING
+const [gk, ...fieldPlayers] = players1;
+// console.log(gk, fieldPlayers);
 
-// #2
-const gk = players1[0];
-// const fieldPlayers = [gk, ...otherPlayers]
-// console.log(otherPlayers);
-
-// #3
+// #3 DESTRUCTURING
 const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
+// console.log(allPlayers);
 
-// #4
+// #4 DESTRUCTURING
 const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
-console.log(players1Final);
+// console.log(players1Final);
 
 // #5
-const team1 = game.odds['team1'];
-const draw = game.odds['x'];
-const team2 = game.odds['team2'];
+// const team1 = game.odds['team1'];
+// const draw = game.odds['x'];
+// const team2 = game.odds['team2'];
+const { odds: { team1, x: draw, team2} } = game;
+// console.log(team1, draw, team2);
 
 // #6
 const printGoals = function (...players) {
-    console.log(`${players}`);
-    console.log(...players.length);
+    console.log(players);
+    console.log(players.length);
 }
-// printGoals();
+// printGoals('Kim', 'Michael', "Jem");
 
 // #7
-// console.log();
-const teamOdds = [team1, draw, team2];
-console.log(teamOdds.sort()[0]);
+// if first part of the equation is true, the last part will be returned
+// team1 < team2 && console.log('Team 1 is more likely to win');
+// team1 > team2 && console.log('Team 2 is more likely to win');
