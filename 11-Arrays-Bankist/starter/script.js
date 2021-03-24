@@ -71,7 +71,6 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -80,7 +79,18 @@ const array1 = ['a', 'b', 'c'];
 
 // for (const [i, ele] of array1.entries()) console.log(i, ele);
 
-// the forEach method always needs the 3 things to be in order: Element, index, array
+// the FOREACH method always needs the 3 things to be in order: Element, index, array
 array1.forEach( function (ele, i, arr) {
   console.log(`${i + 1}. ${ele}`);
 });
+
+// MAP method creates a new array 
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const euroToUsd = 1.1;
+
+const usdMovements = movements.map(function (mov) {
+  return Math.trunc(mov * euroToUsd)
+});
+console.log(movements);
+console.log(usdMovements);
