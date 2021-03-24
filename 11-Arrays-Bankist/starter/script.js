@@ -92,5 +92,23 @@ const euroToUsd = 1.1;
 const usdMovements = movements.map(function (mov) {
   return Math.trunc(mov * euroToUsd)
 });
-console.log(movements);
-console.log(usdMovements);
+// console.log(movements);
+// console.log(usdMovements);
+
+const deposits = movements.filter(
+  function (mov) {
+    return mov > 0;
+  }
+);
+
+const withdrawals = movements.filter(
+  function (mov) {
+    return mov < 0;
+  }
+);
+
+console.log(deposits);
+console.log(withdrawals);
+
+const total = [...deposits, ...withdrawals];
+console.log(total);
