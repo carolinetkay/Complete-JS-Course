@@ -74,3 +74,13 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+
+const array1 = ['a', 'b', 'c'];
+
+// for (const [i, ele] of array1.entries()) console.log(i, ele);
+
+// the forEach method always needs the 3 things to be in order: Element, index, array
+array1.forEach( function (ele, i, arr) {
+  console.log(`${i + 1}. ${ele}`);
+});
