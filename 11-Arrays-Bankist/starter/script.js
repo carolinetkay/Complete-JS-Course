@@ -106,9 +106,35 @@ const withdrawals = movements.filter(
     return mov < 0;
   }
 );
+// console.log(deposits);
+// console.log(withdrawals);
 
-console.log(deposits);
-console.log(withdrawals);
+// REDUCE method; the 2nd number is the starting balance
+const balance = movements.reduce( function (acc, cur, i, arr) {
+  // console.log(`Iteration ${i}: Accumulated amount is ${acc}; Current amount is ${cur}`);
+  return acc + cur;
+}, 0);
+// console.log(balance);
 
-const total = [...deposits, ...withdrawals];
-console.log(total);
+document.querySelector('.balance__value').textContent = `${balance} €`;
+
+// MAXIMUM value
+const max = movements.reduce(
+  (function (acc, mov) {
+    if (acc > mov) {
+      return acc;
+    } else {
+      return mov;
+    };
+  }), movements[0]);
+
+  console.log(`The maximum balance we have is ${max}`);
+
+  `        
+  fsdf
+  fdf
+  sdf`
+
+  'fdsfsf
+  fsdf
+  fsdf'
